@@ -1,0 +1,17 @@
+from fractions import Fraction
+y,w=map(int,input().split())
+maxx=max(y,w)
+
+x = 6 - maxx+1
+
+if 6 % x == 0:      ##1,2,3,6
+    re=Fraction(1,6//x)
+elif x % 2 == 0:    ##2,4,6
+    re=Fraction(x//2,6//2)
+else:                #5
+    re=Fraction(x, 6)
+
+if re ==1:
+  print("1/1")
+else :
+  print(re)
