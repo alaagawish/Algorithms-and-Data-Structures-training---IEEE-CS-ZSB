@@ -1,0 +1,38 @@
+scales=input() 
+weights=input() 
+x=scales.find('|')
+
+length=len(scales)
+dif=x-(length-(x+1))
+if dif==0:
+  ans="Impossible"
+  
+elif len(weights)>=abs(dif) and (len(weights)-abs(dif))%2==0:
+  if dif >0:
+    scales+=weights[0:dif]
+    ans=scales
+
+  elif dif<0:
+    
+    scales=scales[0:x]+weights[0:abs(dif)]+scales[x:]
+    ans=scales
+else:
+  ans="Impossible"
+
+weights=weights[abs(dif):]
+
+if len(weights)%2!=0:
+  weights=""
+while len(weights)>=2:
+  # print (scales[0:dif])
+
+  x=scales.find('|')
+  # weights=weights[abs(dif):]
+  scales+=weights[0]
+  scales=scales[0:x]+weights[1]+scales[x:]
+  weights=weights[2:]
+  ans=scales
+print(ans)
+
+
+
