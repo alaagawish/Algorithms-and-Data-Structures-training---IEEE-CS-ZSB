@@ -1,0 +1,7 @@
+ 
+binary=input()
+decimal= int(binary,2)
+c=0
+while(decimal>(4**c)):
+	c+=1
+print(c)
