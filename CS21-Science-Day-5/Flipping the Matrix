@@ -1,0 +1,61 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+import copy
+def flippingMatrix(matrix):
+    
+    total=0
+    matrix1=[[]for i in range (len(matrix))]
+    row,row2=0,len(matrix)-1
+    col,col2=0,len(matrix)-1
+    for i in range(len(matrix)):
+      if i %2==0:
+        matrix1[i]=matrix[row].copy()
+        row+=1
+      else:
+        matrix1[i]=matrix[row2].copy()
+        row2-=1
+    # print(matrix1)
+    matrix=copy.deepcopy(matrix1)
+    for i in range(len(matrix)):
+      
+      if i %2==0:
+        for j in range(len(matrix)):
+          matrix1[j][i]=matrix[j][col]
+        col+=1
+
+      else:
+        for j in range(len(matrix)):
+          matrix1[j][i]=matrix[j][col2]
+        
+        col2-=1
+
+    # print(matrix)
+    # print(matrix1)
+    for i in range(0,len(matrix),2):
+      for j in range(0,len(matrix),2):
+        total+=max([matrix1[i][j],matrix1[i][j+1],matrix1[i+1][j],matrix1[i+1][j+1]])
+        
+    return total
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    q = int(input())
+
+    for q_itr in range(q):
+        n = int(input())
+
+        matrix = []
+
+        for _ in range(2*n):
+            matrix.append(list(map(int, input().rstrip().split())))
+
+        result = flippingMatrix(matrix)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
