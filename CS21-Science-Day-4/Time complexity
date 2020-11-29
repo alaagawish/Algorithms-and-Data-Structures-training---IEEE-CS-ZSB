@@ -16,7 +16,7 @@ CS21-Science-Day-2
 _________________
 CS21-Science-Day-3
       1-BowWow and the Timetable
-              O(n)
+              O(log4(n))
 
       2-Largest Rectangle
             O(n^2)
