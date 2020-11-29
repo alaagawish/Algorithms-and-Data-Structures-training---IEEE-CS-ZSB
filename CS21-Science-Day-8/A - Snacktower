@@ -1,0 +1,15 @@
+snacks_num=int(input())
+
+snacks=list(map(int,input().split()))
+saved=set()
+j = snacks_num
+for i in range(snacks_num):
+	saved.add(snacks[i])
+	while j in saved:
+		print(j, end=' ')
+		j -= 1
+	print()
+  
+  
+  time >> O(n*m)
+      where m<=n
