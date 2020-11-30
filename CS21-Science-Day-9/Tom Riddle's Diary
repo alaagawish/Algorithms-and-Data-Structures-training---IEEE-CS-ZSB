@@ -1,0 +1,11 @@
+names=set()
+for _ in range(int(input())):
+  name=input()
+  if name in names:
+    print("YES")
+  else:
+    print("NO")
+    names.add(name)
+    
+   Time >> O(n*m*log(n))
+   where m =len(name)
