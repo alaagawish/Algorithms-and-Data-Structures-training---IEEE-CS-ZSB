@@ -1,0 +1,14 @@
+
+requests={}
+for _ in range(int(input())):
+    request=input()
+    if request in requests:
+      requests[request]+=1
+      print(request+str(requests[request]))
+    else:
+      requests[request]=0
+      print("OK")
+
+
+
+Time>>O(n^2)
