@@ -7,5 +7,4 @@ for _ in range(int(input())):
     print("NO")
     names.add(name)
     
-   Time >> O(n*m*log(n))
-   where m =len(name)
+   Time >> O(n^2)
