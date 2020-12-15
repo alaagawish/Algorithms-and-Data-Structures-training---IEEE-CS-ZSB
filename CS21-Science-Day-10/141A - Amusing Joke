@@ -1,0 +1,21 @@
+guests_name=input()
+residence_host=input()
+letters=input()
+ 
+mix=guests_name+residence_host
+ 
+check=[0 for i in range(ord(max(max(letters),max(mix)))-64 )]
+if len(letters)!= len(guests_name+residence_host):
+  print("NO")
+else:
+ 
+  for i in range(len(letters)):
+   
+    check[ord(letters[i])-65]+=1
+    check[ord(mix[i])-65]-=1
+  if max(check)==0 and min(check)==0:
+    print("YES")
+  else:
+    print("NO")
+    
+Time complexity = O(n)
