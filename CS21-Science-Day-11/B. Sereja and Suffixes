@@ -1,0 +1,13 @@
+n,m=map(int,input().split())
+nlist=input().split()
+mlist=set()
+for i in range(n-1,-1,-1):
+    mlist.add(nlist[i])
+    # print(mlist)
+    nlist[i]=str(len(mlist))
+    # print(nlist)
+
+for _ in range(m):
+    print(int(nlist[int(input())-1]))
+    
+Time=O(N)
