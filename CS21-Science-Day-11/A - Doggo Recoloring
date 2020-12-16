@@ -1,0 +1,17 @@
+n=int(input())
+letters=input()
+freq=[0 for i in range(ord(max(letters))-96)]
+for i in letters:
+  freq[ord(i)-97]+=1
+
+flag=0
+for i in freq:
+    if i>1 or n==1:
+      flag=1
+      break
+if flag:
+    print("YES")  
+else:
+    print("NO")
+    
+time=O(N)
