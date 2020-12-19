@@ -1,0 +1,14 @@
+n=int(input())
+numbers=list(map(int,input().split()))
+counter=0
+piece1=sum(numbers)
+piece2=0
+
+for i in range(n-1):
+    piece1-=numbers[i]
+    piece2+=numbers[i]
+    if piece1 ==piece2: 
+      counter+=1
+print(counter)
+
+time=O(n)
